@@ -1,0 +1,455 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4BB796B318F1A0A400E5421B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB796B218F1A0A400E5421B /* Foundation.framework */; };
+		4BB796B518F1A0A400E5421B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB796B418F1A0A400E5421B /* CoreGraphics.framework */; };
+		4BB796B718F1A0A400E5421B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB796B618F1A0A400E5421B /* UIKit.framework */; };
+		4BB796BD18F1A0A400E5421B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4BB796BB18F1A0A400E5421B /* InfoPlist.strings */; };
+		4BB796BF18F1A0A400E5421B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB796BE18F1A0A400E5421B /* main.m */; };
+		4BB796C318F1A0A400E5421B /* NTTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB796C218F1A0A400E5421B /* NTTAppDelegate.m */; };
+		4BB796C518F1A0A400E5421B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BB796C418F1A0A400E5421B /* Images.xcassets */; };
+		4BB796CC18F1A0A400E5421B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB796CB18F1A0A400E5421B /* XCTest.framework */; };
+		4BB796CD18F1A0A400E5421B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB796B218F1A0A400E5421B /* Foundation.framework */; };
+		4BB796CE18F1A0A400E5421B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB796B618F1A0A400E5421B /* UIKit.framework */; };
+		4BB796D618F1A0A400E5421B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4BB796D418F1A0A400E5421B /* InfoPlist.strings */; };
+		4BB796D818F1A0A400E5421B /* NetworkTrafficTrackingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB796D718F1A0A400E5421B /* NetworkTrafficTrackingTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4BB796CF18F1A0A400E5421B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4BB796A718F1A0A400E5421B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4BB796AE18F1A0A400E5421B;
+			remoteInfo = NetworkTrafficTracking;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4BB796AF18F1A0A400E5421B /* NetworkTrafficTracking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkTrafficTracking.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BB796B218F1A0A400E5421B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4BB796B418F1A0A400E5421B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4BB796B618F1A0A400E5421B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4BB796BA18F1A0A400E5421B /* NetworkTrafficTracking-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NetworkTrafficTracking-Info.plist"; sourceTree = "<group>"; };
+		4BB796BC18F1A0A400E5421B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4BB796BE18F1A0A400E5421B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4BB796C018F1A0A400E5421B /* NetworkTrafficTracking-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NetworkTrafficTracking-Prefix.pch"; sourceTree = "<group>"; };
+		4BB796C118F1A0A400E5421B /* NTTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTTAppDelegate.h; sourceTree = "<group>"; };
+		4BB796C218F1A0A400E5421B /* NTTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NTTAppDelegate.m; sourceTree = "<group>"; };
+		4BB796C418F1A0A400E5421B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4BB796CA18F1A0A400E5421B /* NetworkTrafficTrackingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkTrafficTrackingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BB796CB18F1A0A400E5421B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		4BB796D318F1A0A400E5421B /* NetworkTrafficTrackingTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NetworkTrafficTrackingTests-Info.plist"; sourceTree = "<group>"; };
+		4BB796D518F1A0A400E5421B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4BB796D718F1A0A400E5421B /* NetworkTrafficTrackingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkTrafficTrackingTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4BB796AC18F1A0A400E5421B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BB796B518F1A0A400E5421B /* CoreGraphics.framework in Frameworks */,
+				4BB796B718F1A0A400E5421B /* UIKit.framework in Frameworks */,
+				4BB796B318F1A0A400E5421B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4BB796C718F1A0A400E5421B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BB796CC18F1A0A400E5421B /* XCTest.framework in Frameworks */,
+				4BB796CE18F1A0A400E5421B /* UIKit.framework in Frameworks */,
+				4BB796CD18F1A0A400E5421B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4BB796A618F1A0A400E5421B = {
+			isa = PBXGroup;
+			children = (
+				4BB796B818F1A0A400E5421B /* NetworkTrafficTracking */,
+				4BB796D118F1A0A400E5421B /* NetworkTrafficTrackingTests */,
+				4BB796B118F1A0A400E5421B /* Frameworks */,
+				4BB796B018F1A0A400E5421B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4BB796B018F1A0A400E5421B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4BB796AF18F1A0A400E5421B /* NetworkTrafficTracking.app */,
+				4BB796CA18F1A0A400E5421B /* NetworkTrafficTrackingTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4BB796B118F1A0A400E5421B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4BB796B218F1A0A400E5421B /* Foundation.framework */,
+				4BB796B418F1A0A400E5421B /* CoreGraphics.framework */,
+				4BB796B618F1A0A400E5421B /* UIKit.framework */,
+				4BB796CB18F1A0A400E5421B /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4BB796B818F1A0A400E5421B /* NetworkTrafficTracking */ = {
+			isa = PBXGroup;
+			children = (
+				4BB796C118F1A0A400E5421B /* NTTAppDelegate.h */,
+				4BB796C218F1A0A400E5421B /* NTTAppDelegate.m */,
+				4BB796C418F1A0A400E5421B /* Images.xcassets */,
+				4BB796B918F1A0A400E5421B /* Supporting Files */,
+			);
+			path = NetworkTrafficTracking;
+			sourceTree = "<group>";
+		};
+		4BB796B918F1A0A400E5421B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4BB796BA18F1A0A400E5421B /* NetworkTrafficTracking-Info.plist */,
+				4BB796BB18F1A0A400E5421B /* InfoPlist.strings */,
+				4BB796BE18F1A0A400E5421B /* main.m */,
+				4BB796C018F1A0A400E5421B /* NetworkTrafficTracking-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4BB796D118F1A0A400E5421B /* NetworkTrafficTrackingTests */ = {
+			isa = PBXGroup;
+			children = (
+				4BB796D718F1A0A400E5421B /* NetworkTrafficTrackingTests.m */,
+				4BB796D218F1A0A400E5421B /* Supporting Files */,
+			);
+			path = NetworkTrafficTrackingTests;
+			sourceTree = "<group>";
+		};
+		4BB796D218F1A0A400E5421B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4BB796D318F1A0A400E5421B /* NetworkTrafficTrackingTests-Info.plist */,
+				4BB796D418F1A0A400E5421B /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4BB796AE18F1A0A400E5421B /* NetworkTrafficTracking */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4BB796DB18F1A0A400E5421B /* Build configuration list for PBXNativeTarget "NetworkTrafficTracking" */;
+			buildPhases = (
+				4BB796AB18F1A0A400E5421B /* Sources */,
+				4BB796AC18F1A0A400E5421B /* Frameworks */,
+				4BB796AD18F1A0A400E5421B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NetworkTrafficTracking;
+			productName = NetworkTrafficTracking;
+			productReference = 4BB796AF18F1A0A400E5421B /* NetworkTrafficTracking.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4BB796C918F1A0A400E5421B /* NetworkTrafficTrackingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4BB796DE18F1A0A400E5421B /* Build configuration list for PBXNativeTarget "NetworkTrafficTrackingTests" */;
+			buildPhases = (
+				4BB796C618F1A0A400E5421B /* Sources */,
+				4BB796C718F1A0A400E5421B /* Frameworks */,
+				4BB796C818F1A0A400E5421B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4BB796D018F1A0A400E5421B /* PBXTargetDependency */,
+			);
+			name = NetworkTrafficTrackingTests;
+			productName = NetworkTrafficTrackingTests;
+			productReference = 4BB796CA18F1A0A400E5421B /* NetworkTrafficTrackingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4BB796A718F1A0A400E5421B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = NTT;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Bogdan Stasjuk";
+				TargetAttributes = {
+					4BB796C918F1A0A400E5421B = {
+						TestTargetID = 4BB796AE18F1A0A400E5421B;
+					};
+				};
+			};
+			buildConfigurationList = 4BB796AA18F1A0A400E5421B /* Build configuration list for PBXProject "NetworkTrafficTracking" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4BB796A618F1A0A400E5421B;
+			productRefGroup = 4BB796B018F1A0A400E5421B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4BB796AE18F1A0A400E5421B /* NetworkTrafficTracking */,
+				4BB796C918F1A0A400E5421B /* NetworkTrafficTrackingTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4BB796AD18F1A0A400E5421B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BB796BD18F1A0A400E5421B /* InfoPlist.strings in Resources */,
+				4BB796C518F1A0A400E5421B /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4BB796C818F1A0A400E5421B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BB796D618F1A0A400E5421B /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4BB796AB18F1A0A400E5421B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BB796BF18F1A0A400E5421B /* main.m in Sources */,
+				4BB796C318F1A0A400E5421B /* NTTAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4BB796C618F1A0A400E5421B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BB796D818F1A0A400E5421B /* NetworkTrafficTrackingTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4BB796D018F1A0A400E5421B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4BB796AE18F1A0A400E5421B /* NetworkTrafficTracking */;
+			targetProxy = 4BB796CF18F1A0A400E5421B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4BB796BB18F1A0A400E5421B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4BB796BC18F1A0A400E5421B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4BB796D418F1A0A400E5421B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4BB796D518F1A0A400E5421B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4BB796D918F1A0A400E5421B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4BB796DA18F1A0A400E5421B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4BB796DC18F1A0A400E5421B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NetworkTrafficTracking/NetworkTrafficTracking-Prefix.pch";
+				INFOPLIST_FILE = "NetworkTrafficTracking/NetworkTrafficTracking-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4BB796DD18F1A0A400E5421B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NetworkTrafficTracking/NetworkTrafficTracking-Prefix.pch";
+				INFOPLIST_FILE = "NetworkTrafficTracking/NetworkTrafficTracking-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		4BB796DF18F1A0A400E5421B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NetworkTrafficTracking.app/NetworkTrafficTracking";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NetworkTrafficTracking/NetworkTrafficTracking-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "NetworkTrafficTrackingTests/NetworkTrafficTrackingTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		4BB796E018F1A0A400E5421B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NetworkTrafficTracking.app/NetworkTrafficTracking";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NetworkTrafficTracking/NetworkTrafficTracking-Prefix.pch";
+				INFOPLIST_FILE = "NetworkTrafficTrackingTests/NetworkTrafficTrackingTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4BB796AA18F1A0A400E5421B /* Build configuration list for PBXProject "NetworkTrafficTracking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4BB796D918F1A0A400E5421B /* Debug */,
+				4BB796DA18F1A0A400E5421B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4BB796DB18F1A0A400E5421B /* Build configuration list for PBXNativeTarget "NetworkTrafficTracking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4BB796DC18F1A0A400E5421B /* Debug */,
+				4BB796DD18F1A0A400E5421B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4BB796DE18F1A0A400E5421B /* Build configuration list for PBXNativeTarget "NetworkTrafficTrackingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4BB796DF18F1A0A400E5421B /* Debug */,
+				4BB796E018F1A0A400E5421B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4BB796A718F1A0A400E5421B /* Project object */;
+}
