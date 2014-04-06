@@ -20,6 +20,7 @@
 		4BB796FF18F1A47D00E5421B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BB796EF18F1A47D00E5421B /* Images.xcassets */; };
 		4BB7970018F1A47D00E5421B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4BB796F518F1A47D00E5421B /* InfoPlist.strings */; };
 		4BB7970318F1A68F00E5421B /* NTTTrackingTrafficViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB7970218F1A68F00E5421B /* NTTTrackingTrafficViewController.m */; };
+		4BB7970618F1E50000E5421B /* BSNetworkTraffic.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB7970518F1E50000E5421B /* BSNetworkTraffic.m */; };
 		580824A3BC5D4722BBD17BAB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F0CD3529083449C998EBA05 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,8 @@
 		4BB796F618F1A47D00E5421B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4BB7970118F1A68F00E5421B /* NTTTrackingTrafficViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTTTrackingTrafficViewController.h; sourceTree = "<group>"; };
 		4BB7970218F1A68F00E5421B /* NTTTrackingTrafficViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTTTrackingTrafficViewController.m; sourceTree = "<group>"; };
+		4BB7970418F1E50000E5421B /* BSNetworkTraffic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BSNetworkTraffic.h; path = NetworkTrafficTracking/Library/BSNetworkTraffic.h; sourceTree = SOURCE_ROOT; };
+		4BB7970518F1E50000E5421B /* BSNetworkTraffic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSNetworkTraffic.m; path = NetworkTrafficTracking/Library/BSNetworkTraffic.m; sourceTree = SOURCE_ROOT; };
 		8F0CD3529083449C998EBA05 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF14BC17075B42C994423ED0 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -177,6 +180,8 @@
 		4BB796E918F1A47D00E5421B /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				4BB7970418F1E50000E5421B /* BSNetworkTraffic.h */,
+				4BB7970518F1E50000E5421B /* BSNetworkTraffic.m */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -433,6 +438,7 @@
 				4BB796FC18F1A47D00E5421B /* main.m in Sources */,
 				4BB7970318F1A68F00E5421B /* NTTTrackingTrafficViewController.m in Sources */,
 				4BB796FE18F1A47D00E5421B /* NTTAppDelegate.m in Sources */,
+				4BB7970618F1E50000E5421B /* BSNetworkTraffic.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
