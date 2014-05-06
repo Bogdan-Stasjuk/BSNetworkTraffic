@@ -45,10 +45,6 @@
 
 - (void)setAppStartTime:(NSDate *)appStartTime
 {
-    struct BSNetworkTrafficValues trafficCounters = {0};
-    [[self class] getTrafficCounters:&trafficCounters];
-    self.networkTrafficPrevValues = trafficCounters;
-    
     _appStartTime = appStartTime;
 }
 
@@ -71,6 +67,11 @@
 
 - (void)resetCounters
 {
+    if (!self.appStartTime)
+        self.appStartTime = [NSDate date];
+    
+    memset(&appCounters, 0, sizeof appCounters);
+    
     struct BSNetworkTrafficValues trafficCounters = {0};
     [[self class] getTrafficCounters:&trafficCounters];
     self.networkTrafficPrevValues = trafficCounters;

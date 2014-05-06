@@ -25,18 +25,36 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    NSLog(@"viewDidLoad = %@", [BSNetworkTraffic sharedInstance].appStartTime);
+}
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [[BSNetworkTraffic sharedInstance] resetCounters];
+    
+    NSLog(@"reseted");
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
     BSNetworkTraffic *networkTraffic = [BSNetworkTraffic sharedInstance];
-
+    
     NSInteger counter = 0;
-    while (counter < 10) {
+    while (counter < 3) {
         
-        struct BSNetworkTrafficValues *counters = networkTraffic.counters;
+        [networkTraffic counters];
         
         counter++;
         
         sleep(1);
     }
+
+    NSLog(@"viewDidAppear = %@", [BSNetworkTraffic sharedInstance].appStartTime);
+
+    [self.navigationController pushViewController:[UIViewController new] animated:YES];
 }
 
 - (void)didReceiveMemoryWarning

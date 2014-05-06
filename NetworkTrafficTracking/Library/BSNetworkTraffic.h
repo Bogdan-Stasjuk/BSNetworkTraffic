@@ -19,7 +19,7 @@ struct BSNetworkTrafficValues
 @interface BSNetworkTraffic : NSObject
 
 @property(nonatomic, assign, readonly) struct   BSNetworkTrafficValues  *counters;
-@property(nonatomic, strong)                    NSDate                  *appStartTime;
+@property(nonatomic, strong, readonly)          NSDate                  *appStartTime;
 
 + (instancetype)sharedInstance;
 

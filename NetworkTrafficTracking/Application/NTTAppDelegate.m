@@ -18,8 +18,10 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
-    [BSNetworkTraffic sharedInstance].appStartTime = [NSDate date];
-    self.window.rootViewController = [NTTTrackingTrafficViewController new];
+    [[BSNetworkTraffic sharedInstance] resetCounters];
+    
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:[NTTTrackingTrafficViewController new]];
+    self.window.rootViewController = navController;
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
