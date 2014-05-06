@@ -139,7 +139,11 @@
     }
     
     NSLog(@"System traffic counters: WiFiSent = %lu, WiFiReceived = %lu, WWANSent = %lu, WWANReceived = %lu, errorCnt = %lu",
-          networkTrafficCounters->WiFiSent, networkTrafficCounters->WiFiReceived, networkTrafficCounters->WWANSent, networkTrafficCounters->WWANReceived, networkTrafficCounters->errorCnt);
+          (unsigned long)networkTrafficCounters->WiFiSent,
+          (unsigned long)networkTrafficCounters->WiFiReceived,
+          (unsigned long)networkTrafficCounters->WWANSent,
+          (unsigned long)networkTrafficCounters->WWANReceived,
+          (unsigned long)networkTrafficCounters->errorCnt);
 }
 
 #pragma mark -Nonstatic
@@ -156,7 +160,11 @@
     _counters->errorCnt += trafficCounters.errorCnt - self.networkTrafficPrevValues.errorCnt;
     
     NSLog(@"Counters: WiFiSent = %lu, WiFiReceived = %lu, WWANSent = %lu, WWANReceived = %lu, errorCnt = %lu",
-          _counters->WiFiSent, _counters->WiFiReceived, _counters->WWANSent, (unsigned long)_counters->WWANReceived, _counters->errorCnt);
+          (unsigned long)_counters->WiFiSent,
+          (unsigned long)_counters->WiFiReceived,
+          (unsigned long)_counters->WWANSent,
+          (unsigned long)_counters->WWANReceived,
+          (unsigned long)_counters->errorCnt);
     
     self.networkTrafficPrevValues = trafficCounters;
 }
