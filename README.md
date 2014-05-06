@@ -15,5 +15,5 @@ struct BSNetworkTrafficValues
     NSUInteger errorCnt;
 };
 ```
-This values will be recalculated every time you are refering to "counters".
+This values will be recalculated every time you are referring to "counters".
 For zeroing counters and starting from scratch you have to call "resetCounters".
