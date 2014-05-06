@@ -19,7 +19,8 @@
     struct BSNetworkTrafficValues appCounters;
 }
 
-@property(nonatomic, assign) struct BSNetworkTrafficValues  networkTrafficPrevValues;
+@property(nonatomic, assign) struct     BSNetworkTrafficValues  *counters;
+@property(nonatomic, assign) struct     BSNetworkTrafficValues  networkTrafficPrevValues;
 
 @end
 
@@ -36,7 +37,19 @@
         
         _counters = &appCounters;
     }
+    
+    [self calcAppTrafficChanges];
+    
     return _counters;
+}
+
+- (void)setAppStartTime:(NSDate *)appStartTime
+{
+    struct BSNetworkTrafficValues trafficCounters = {0};
+    [[self class] getTrafficCounters:&trafficCounters];
+    self.networkTrafficPrevValues = trafficCounters;
+    
+    _appStartTime = appStartTime;
 }
 
 
@@ -56,21 +69,11 @@
 
 #pragma mark -Nonstatic
 
-- (void)refreshCounters
+- (void)resetCounters
 {
     struct BSNetworkTrafficValues trafficCounters = {0};
     [[self class] getTrafficCounters:&trafficCounters];
-    
-    if (self.isFirstTimeAfterLaunch)
-    {
-        self.networkTrafficPrevValues = trafficCounters;
-        
-        self.isFirstTimeAfterLaunch = NO;
-    }
-    else
-    {
-        [self calcAppTrafficChangesForTrafficCounters:&trafficCounters];
-    }
+    self.networkTrafficPrevValues = trafficCounters;
 }
 
 
@@ -99,20 +102,30 @@
             
             if (cursor->ifa_addr->sa_family == AF_LINK)
             {
+                // WiFi
                 if ([interfaceName hasPrefix:@"en"])
                 {
                     networkStatisc = (const struct if_data *) cursor->ifa_data;
                     networkTrafficCounters->WiFiSent += networkStatisc->ifi_obytes;
                     networkTrafficCounters->WiFiReceived += networkStatisc->ifi_ibytes;
+                    networkTrafficCounters->errorCnt += networkStatisc->ifi_ierrors + networkStatisc->ifi_oerrors;
+
+//                    NSLog(@"input errors on interface: %d", networkStatisc->ifi_ierrors);
+//                    NSLog(@"output errors on interface: %d", networkStatisc->ifi_oerrors);
 //                    NSLog(@"WiFiSent %lu == %d", (unsigned long)WiFiSent, networkStatisc->ifi_obytes);
 //                    NSLog(@"WiFiReceived %lu == %d", (unsigned long)WiFiReceived, networkStatisc->ifi_ibytes);
                 }
                 
+                // WWAN
                 if ([interfaceName hasPrefix:@"pdp_ip"])
                 {
                     networkStatisc = (const struct if_data *)cursor->ifa_data;
                     networkTrafficCounters->WWANSent += networkStatisc->ifi_obytes;
                     networkTrafficCounters->WWANReceived += networkStatisc->ifi_ibytes;
+                    networkTrafficCounters->errorCnt += networkStatisc->ifi_ierrors + networkStatisc->ifi_oerrors;
+
+//                    NSLog(@"input errors on interface: %d", networkStatisc->ifi_ierrors);
+//                    NSLog(@"output errors on interface: %d", networkStatisc->ifi_oerrors);
 //                    NSLog(@"WWANSent %lu == %d", (unsigned long)WWANSent, networkStatisc->ifi_obytes);
 //                    NSLog(@"WWANReceived %lu == %d", (unsigned long)WWANReceived, networkStatisc->ifi_ibytes);
                 }
@@ -124,22 +137,27 @@
         freeifaddrs(addrs);
     }
     
-    NSLog(@"System traffic counters: WiFiSent = %lu, WiFiReceived = %lu, WWANSent = %lu, WWANReceived = %lu",
-          networkTrafficCounters->WiFiSent, networkTrafficCounters->WiFiReceived, networkTrafficCounters->WWANSent, networkTrafficCounters->WWANReceived);
+    NSLog(@"System traffic counters: WiFiSent = %lu, WiFiReceived = %lu, WWANSent = %lu, WWANReceived = %lu, errorCnt = %lu",
+          networkTrafficCounters->WiFiSent, networkTrafficCounters->WiFiReceived, networkTrafficCounters->WWANSent, networkTrafficCounters->WWANReceived, networkTrafficCounters->errorCnt);
 }
 
 #pragma mark -Nonstatic
 
-- (void)calcAppTrafficChangesForTrafficCounters:(struct BSNetworkTrafficValues *)trafficCounters
+- (void)calcAppTrafficChanges
 {
-    self.counters->WiFiReceived += trafficCounters->WiFiReceived - self.networkTrafficPrevValues.WiFiReceived;
-    self.counters->WiFiSent += trafficCounters->WiFiSent - self.networkTrafficPrevValues.WiFiSent;
-    self.counters->WWANReceived += trafficCounters->WWANReceived - self.networkTrafficPrevValues.WWANReceived;
-    self.counters->WWANSent += trafficCounters->WWANSent - self.networkTrafficPrevValues.WWANSent;
+    struct BSNetworkTrafficValues trafficCounters = {0};
+    [[self class] getTrafficCounters:&trafficCounters];
     
-    NSLog(@"Counters: WiFiSent = %lu, WiFiReceived = %lu, WWANSent = %lu, WWANReceived = %lu", self.counters->WiFiSent, self.counters->WiFiReceived, self.counters->WWANSent, (unsigned long)self.counters->WWANReceived);
+    _counters->WiFiReceived += trafficCounters.WiFiReceived - self.networkTrafficPrevValues.WiFiReceived;
+    _counters->WiFiSent += trafficCounters.WiFiSent - self.networkTrafficPrevValues.WiFiSent;
+    _counters->WWANReceived += trafficCounters.WWANReceived - self.networkTrafficPrevValues.WWANReceived;
+    _counters->WWANSent += trafficCounters.WWANSent - self.networkTrafficPrevValues.WWANSent;
+    _counters->errorCnt += trafficCounters.errorCnt - self.networkTrafficPrevValues.errorCnt;
     
-    self.networkTrafficPrevValues = *trafficCounters;
+    NSLog(@"Counters: WiFiSent = %lu, WiFiReceived = %lu, WWANSent = %lu, WWANReceived = %lu, errorCnt = %lu",
+          _counters->WiFiSent, _counters->WiFiReceived, _counters->WWANSent, (unsigned long)_counters->WWANReceived, _counters->errorCnt);
+    
+    self.networkTrafficPrevValues = trafficCounters;
 }
 
 @end

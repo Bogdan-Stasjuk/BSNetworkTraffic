@@ -12,16 +12,17 @@ struct BSNetworkTrafficValues
     NSUInteger WiFiReceived;
     NSUInteger WWANSent;
     NSUInteger WWANReceived;
+    NSUInteger errorCnt;
 };
 
 
 @interface BSNetworkTraffic : NSObject
 
-@property(nonatomic, assign)        BOOL                    isFirstTimeAfterLaunch;
-@property(nonatomic, assign) struct BSNetworkTrafficValues  *counters;
+@property(nonatomic, assign, readonly) struct   BSNetworkTrafficValues  *counters;
+@property(nonatomic, strong)                    NSDate                  *appStartTime;
 
 + (instancetype)sharedInstance;
 
-- (void)refreshCounters;
+- (void)resetCounters;
 
 @end

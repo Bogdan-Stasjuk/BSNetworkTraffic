@@ -27,12 +27,16 @@
     [super viewDidLoad];
 
     BSNetworkTraffic *networkTraffic = [BSNetworkTraffic sharedInstance];
-    networkTraffic.isFirstTimeAfterLaunch = YES;
 
-    [networkTraffic refreshCounters];
-    [networkTraffic refreshCounters];
-    [networkTraffic refreshCounters];
-    [networkTraffic refreshCounters];
+    NSInteger counter = 0;
+    while (counter < 10) {
+        
+        struct BSNetworkTrafficValues *counters = networkTraffic.counters;
+        
+        counter++;
+        
+        sleep(1);
+    }
 }
 
 - (void)didReceiveMemoryWarning
