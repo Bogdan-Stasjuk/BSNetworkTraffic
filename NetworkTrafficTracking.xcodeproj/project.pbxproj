@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43EF74A519192C790015B22C /* BSNetworkTraffic.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EF74A419192C790015B22C /* BSNetworkTraffic.m */; };
 		4BB796B318F1A0A400E5421B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB796B218F1A0A400E5421B /* Foundation.framework */; };
 		4BB796B518F1A0A400E5421B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB796B418F1A0A400E5421B /* CoreGraphics.framework */; };
 		4BB796B718F1A0A400E5421B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB796B618F1A0A400E5421B /* UIKit.framework */; };
@@ -20,7 +21,6 @@
 		4BB796FF18F1A47D00E5421B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BB796EF18F1A47D00E5421B /* Images.xcassets */; };
 		4BB7970018F1A47D00E5421B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4BB796F518F1A47D00E5421B /* InfoPlist.strings */; };
 		4BB7970318F1A68F00E5421B /* NTTTrackingTrafficViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB7970218F1A68F00E5421B /* NTTTrackingTrafficViewController.m */; };
-		4BB7970618F1E50000E5421B /* BSNetworkTraffic.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB7970518F1E50000E5421B /* BSNetworkTraffic.m */; };
 		580824A3BC5D4722BBD17BAB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F0CD3529083449C998EBA05 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		43EF74A319192C790015B22C /* BSNetworkTraffic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSNetworkTraffic.h; sourceTree = "<group>"; };
+		43EF74A419192C790015B22C /* BSNetworkTraffic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSNetworkTraffic.m; sourceTree = "<group>"; };
 		4BB796AF18F1A0A400E5421B /* NetworkTrafficTracking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkTrafficTracking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BB796B218F1A0A400E5421B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4BB796B418F1A0A400E5421B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -53,8 +55,6 @@
 		4BB796F618F1A47D00E5421B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4BB7970118F1A68F00E5421B /* NTTTrackingTrafficViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTTTrackingTrafficViewController.h; sourceTree = "<group>"; };
 		4BB7970218F1A68F00E5421B /* NTTTrackingTrafficViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTTTrackingTrafficViewController.m; sourceTree = "<group>"; };
-		4BB7970418F1E50000E5421B /* BSNetworkTraffic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BSNetworkTraffic.h; path = NetworkTrafficTracking/Library/BSNetworkTraffic.h; sourceTree = SOURCE_ROOT; };
-		4BB7970518F1E50000E5421B /* BSNetworkTraffic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSNetworkTraffic.m; path = NetworkTrafficTracking/Library/BSNetworkTraffic.m; sourceTree = SOURCE_ROOT; };
 		8F0CD3529083449C998EBA05 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF14BC17075B42C994423ED0 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,9 +84,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		43EF74A219192C790015B22C /* BSNetworkTraffic */ = {
+			isa = PBXGroup;
+			children = (
+				43EF74A319192C790015B22C /* BSNetworkTraffic.h */,
+				43EF74A419192C790015B22C /* BSNetworkTraffic.m */,
+			);
+			path = BSNetworkTraffic;
+			sourceTree = "<group>";
+		};
 		4BB796A618F1A0A400E5421B = {
 			isa = PBXGroup;
 			children = (
+				43EF74A219192C790015B22C /* BSNetworkTraffic */,
 				4BB796B818F1A0A400E5421B /* NetworkTrafficTracking */,
 				4BB796D118F1A0A400E5421B /* NetworkTrafficTrackingTests */,
 				4BB796B118F1A0A400E5421B /* Frameworks */,
@@ -180,8 +190,6 @@
 		4BB796E918F1A47D00E5421B /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				4BB7970418F1E50000E5421B /* BSNetworkTraffic.h */,
-				4BB7970518F1E50000E5421B /* BSNetworkTraffic.m */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -438,7 +446,7 @@
 				4BB796FC18F1A47D00E5421B /* main.m in Sources */,
 				4BB7970318F1A68F00E5421B /* NTTTrackingTrafficViewController.m in Sources */,
 				4BB796FE18F1A47D00E5421B /* NTTAppDelegate.m in Sources */,
-				4BB7970618F1E50000E5421B /* BSNetworkTraffic.m in Sources */,
+				43EF74A519192C790015B22C /* BSNetworkTraffic.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
