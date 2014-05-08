@@ -181,11 +181,16 @@
     _changes->errorCnt += trafficCounters.errorCnt - self.networkTrafficPrevValues.errorCnt;
     
     [self counters];
-    [[NSUserDefaults standardUserDefaults] setInteger:_counters->errorCnt + trafficCounters.errorCnt - self.networkTrafficPrevValues.errorCnt forKey:APP_TRAFFIC_ERRORCNT];
-    [[NSUserDefaults standardUserDefaults] setInteger:_counters->WiFiSent + trafficCounters.WiFiSent - self.networkTrafficPrevValues.WiFiSent forKey:APP_TRAFFIC_WIFISENT];
-    [[NSUserDefaults standardUserDefaults] setInteger:_counters->WiFiReceived + trafficCounters.WiFiReceived - self.networkTrafficPrevValues.WiFiReceived forKey:APP_TRAFFIC_WIFIRECEIVED];
-    [[NSUserDefaults standardUserDefaults] setInteger:_counters->WWANSent + trafficCounters.WWANSent - self.networkTrafficPrevValues.WWANSent forKey:APP_TRAFFIC_WWANSENT];
-    [[NSUserDefaults standardUserDefaults] setInteger:_counters->WWANReceived + trafficCounters.WWANReceived - self.networkTrafficPrevValues.WWANReceived forKey:APP_TRAFFIC_WWANRECEIVED];
+    _counters->errorCnt += trafficCounters.errorCnt - self.networkTrafficPrevValues.errorCnt;
+    _counters->WiFiSent += trafficCounters.WiFiSent - self.networkTrafficPrevValues.WiFiSent;
+    _counters->WiFiReceived += trafficCounters.WiFiReceived - self.networkTrafficPrevValues.WiFiReceived;
+    _counters->WWANSent += trafficCounters.WWANSent - self.networkTrafficPrevValues.WWANSent;
+    _counters->WWANReceived += trafficCounters.WWANReceived - self.networkTrafficPrevValues.WWANReceived;
+    [[NSUserDefaults standardUserDefaults] setInteger:_counters->errorCnt forKey:APP_TRAFFIC_ERRORCNT];
+    [[NSUserDefaults standardUserDefaults] setInteger:_counters->WiFiSent forKey:APP_TRAFFIC_WIFISENT];
+    [[NSUserDefaults standardUserDefaults] setInteger:_counters->WiFiReceived forKey:APP_TRAFFIC_WIFIRECEIVED];
+    [[NSUserDefaults standardUserDefaults] setInteger:_counters->WWANSent forKey:APP_TRAFFIC_WWANSENT];
+    [[NSUserDefaults standardUserDefaults] setInteger:_counters->WWANReceived forKey:APP_TRAFFIC_WWANRECEIVED];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     NSLog(@"\nChanges: WiFiSent = %lu, WiFiReceived = %lu, WWANSent = %lu, WWANReceived = %lu, errorCnt = %lu \nCounters: WiFiSent = %lu, WiFiReceived = %lu, WWANSent = %lu, WWANReceived = %lu, errorCnt = %lu",
