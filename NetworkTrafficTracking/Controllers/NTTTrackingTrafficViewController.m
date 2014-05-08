@@ -45,7 +45,7 @@
     NSInteger counter = 0;
     while (counter < 3) {
         
-        [networkTraffic counters];
+        [networkTraffic changes];
         
         counter++;
         
