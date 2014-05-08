@@ -86,7 +86,7 @@
 
 #pragma mark -Nonstatic
 
-- (void)resetCounters
+- (void)resetChanges
 {
     if (!self.appStartTime)
         self.appStartTime = [NSDate date];

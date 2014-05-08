@@ -33,7 +33,7 @@
 {
     [super viewWillAppear:animated];
     
-    [[BSNetworkTraffic sharedInstance] resetCounters];
+    [[BSNetworkTraffic sharedInstance] resetChanges];
     
     NSLog(@"reseted");
 }

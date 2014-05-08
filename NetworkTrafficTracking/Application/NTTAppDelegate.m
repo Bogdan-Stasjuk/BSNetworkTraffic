@@ -18,7 +18,7 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
-    [[BSNetworkTraffic sharedInstance] resetCounters];
+    [[BSNetworkTraffic sharedInstance] resetChanges];
     
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:[NTTTrackingTrafficViewController new]];
     self.window.rootViewController = navController;
@@ -48,7 +48,7 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-    [[BSNetworkTraffic sharedInstance] resetCounters];
+    [[BSNetworkTraffic sharedInstance] resetChanges];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
