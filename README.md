@@ -17,8 +17,6 @@ struct BSNetworkTrafficValues
 ```
 
 For initialization you have to call `resetChanges`.
-Current values of network traffic changes you can get from property `changes`. This struc will be being recalculated every time you will call it. For zeroing `changes` you have to call `resetChanges`.
-
-At the same time on each call of `changes` app's traffic `counters` will be increased on corresponding values.
+Current values of network traffic changes you can get from property `changes`. This struct will be being recalculated every time you will call it. For zeroing `changes` you have to call `resetChanges`.
 
 App's traffic `counters` is stored at `standardUserDefaults` and will be being increased constantly on each call of `changes` from app's installation till app's removing.
