@@ -52,11 +52,6 @@
     return _changes;
 }
 
-- (void)setAppStartTime:(NSDate *)appStartTime
-{
-    _appStartTime = appStartTime;
-}
-
 - (struct BSNetworkTrafficValues *)counters
 {
     if (!_counters)
@@ -88,10 +83,7 @@
 
 - (void)resetChanges
 {
-    if (!self.appStartTime)
-        self.appStartTime = [NSDate date];
-    
-    memset(&appCounters, 0, sizeof appCounters);
+    memset(&appChanges, 0, sizeof appChanges);
     
     struct BSNetworkTrafficValues trafficCounters = {0};
     [[self class] getTrafficCounters:&trafficCounters];
@@ -159,12 +151,12 @@
         freeifaddrs(addrs);
     }
     
-    NSLog(@"\nSystem traffic counters: WiFiSent = %lu, WiFiReceived = %lu, WWANSent = %lu, WWANReceived = %lu, errorCnt = %lu",
-          (unsigned long)networkTrafficCounters->WiFiSent,
-          (unsigned long)networkTrafficCounters->WiFiReceived,
-          (unsigned long)networkTrafficCounters->WWANSent,
-          (unsigned long)networkTrafficCounters->WWANReceived,
-          (unsigned long)networkTrafficCounters->errorCnt);
+//    NSLog(@"\nSystem traffic counters: WiFiSent = %lu, WiFiReceived = %lu, WWANSent = %lu, WWANReceived = %lu, errorCnt = %lu",
+//          (unsigned long)networkTrafficCounters->WiFiSent,
+//          (unsigned long)networkTrafficCounters->WiFiReceived,
+//          (unsigned long)networkTrafficCounters->WWANSent,
+//          (unsigned long)networkTrafficCounters->WWANReceived,
+//          (unsigned long)networkTrafficCounters->errorCnt);
 }
 
 #pragma mark -Nonstatic
@@ -174,17 +166,17 @@
     struct BSNetworkTrafficValues trafficCounters = {0};
     [[self class] getTrafficCounters:&trafficCounters];
     
-    _changes->WiFiReceived += trafficCounters.WiFiReceived - self.networkTrafficPrevValues.WiFiReceived;
-    _changes->WiFiSent += trafficCounters.WiFiSent - self.networkTrafficPrevValues.WiFiSent;
-    _changes->WWANReceived += trafficCounters.WWANReceived - self.networkTrafficPrevValues.WWANReceived;
-    _changes->WWANSent += trafficCounters.WWANSent - self.networkTrafficPrevValues.WWANSent;
-    _changes->errorCnt += trafficCounters.errorCnt - self.networkTrafficPrevValues.errorCnt;
+    _changes->WiFiReceived  += trafficCounters.WiFiReceived - self.networkTrafficPrevValues.WiFiReceived;
+    _changes->WiFiSent      += trafficCounters.WiFiSent - self.networkTrafficPrevValues.WiFiSent;
+    _changes->WWANReceived  += trafficCounters.WWANReceived - self.networkTrafficPrevValues.WWANReceived;
+    _changes->WWANSent      += trafficCounters.WWANSent - self.networkTrafficPrevValues.WWANSent;
+    _changes->errorCnt      += trafficCounters.errorCnt - self.networkTrafficPrevValues.errorCnt;
     
     [self counters];
-    _counters->errorCnt += trafficCounters.errorCnt - self.networkTrafficPrevValues.errorCnt;
-    _counters->WiFiSent += trafficCounters.WiFiSent - self.networkTrafficPrevValues.WiFiSent;
+    _counters->errorCnt     += trafficCounters.errorCnt - self.networkTrafficPrevValues.errorCnt;
+    _counters->WiFiSent     += trafficCounters.WiFiSent - self.networkTrafficPrevValues.WiFiSent;
     _counters->WiFiReceived += trafficCounters.WiFiReceived - self.networkTrafficPrevValues.WiFiReceived;
-    _counters->WWANSent += trafficCounters.WWANSent - self.networkTrafficPrevValues.WWANSent;
+    _counters->WWANSent     += trafficCounters.WWANSent - self.networkTrafficPrevValues.WWANSent;
     _counters->WWANReceived += trafficCounters.WWANReceived - self.networkTrafficPrevValues.WWANReceived;
     [[NSUserDefaults standardUserDefaults] setInteger:_counters->errorCnt forKey:APP_TRAFFIC_ERRORCNT];
     [[NSUserDefaults standardUserDefaults] setInteger:_counters->WiFiSent forKey:APP_TRAFFIC_WIFISENT];
@@ -193,17 +185,17 @@
     [[NSUserDefaults standardUserDefaults] setInteger:_counters->WWANReceived forKey:APP_TRAFFIC_WWANRECEIVED];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-    NSLog(@"\nChanges: WiFiSent = %lu, WiFiReceived = %lu, WWANSent = %lu, WWANReceived = %lu, errorCnt = %lu \nCounters: WiFiSent = %lu, WiFiReceived = %lu, WWANSent = %lu, WWANReceived = %lu, errorCnt = %lu",
-            (unsigned long)_changes->WiFiSent,
-            (unsigned long)_changes->WiFiReceived,
-            (unsigned long)_changes->WWANSent,
-            (unsigned long)_changes->WWANReceived,
-            (unsigned long)_changes->errorCnt,
-            (unsigned long)_counters->WiFiSent,
-            (unsigned long)_counters->WiFiReceived,
-            (unsigned long)_counters->WWANSent,
-            (unsigned long)_counters->WWANReceived,
-            (unsigned long)_counters->errorCnt);
+//    NSLog(@"\nChanges: WiFiSent = %lu, WiFiReceived = %lu, WWANSent = %lu, WWANReceived = %lu, errorCnt = %lu \nCounters: WiFiSent = %lu, WiFiReceived = %lu, WWANSent = %lu, WWANReceived = %lu, errorCnt = %lu",
+//            (unsigned long)_changes->WiFiSent,
+//            (unsigned long)_changes->WiFiReceived,
+//            (unsigned long)_changes->WWANSent,
+//            (unsigned long)_changes->WWANReceived,
+//            (unsigned long)_changes->errorCnt,
+//            (unsigned long)_counters->WiFiSent,
+//            (unsigned long)_counters->WiFiReceived,
+//            (unsigned long)_counters->WWANSent,
+//            (unsigned long)_counters->WWANReceived,
+//            (unsigned long)_counters->errorCnt);
     
     self.networkTrafficPrevValues = trafficCounters;
 }

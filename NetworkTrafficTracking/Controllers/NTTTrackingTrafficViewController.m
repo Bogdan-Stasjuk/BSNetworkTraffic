@@ -25,8 +25,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    NSLog(@"viewDidLoad = %@", [BSNetworkTraffic sharedInstance].appStartTime);
+
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -45,14 +44,23 @@
     NSInteger counter = 0;
     while (counter < 3) {
         
-        [networkTraffic changes];
+        struct BSNetworkTrafficValues trafficChanges = *[networkTraffic changes];
+        NSLog(@"\nChanges: WiFiSent = %lu, WiFiReceived = %lu, WWANSent = %lu, WWANReceived = %lu, errorCnt = %lu \nCounters: WiFiSent = %lu, WiFiReceived = %lu, WWANSent = %lu, WWANReceived = %lu, errorCnt = %lu",
+                (unsigned long)trafficChanges.WiFiSent,
+                (unsigned long)trafficChanges.WiFiReceived,
+                (unsigned long)trafficChanges.WWANSent,
+                (unsigned long)trafficChanges.WWANReceived,
+                (unsigned long)trafficChanges.errorCnt,
+                (unsigned long)networkTraffic.counters->WiFiSent,
+                (unsigned long)networkTraffic.counters->WiFiReceived,
+                (unsigned long)networkTraffic.counters->WWANSent,
+                (unsigned long)networkTraffic.counters->WWANReceived,
+                (unsigned long)networkTraffic.counters->errorCnt);
         
         counter++;
         
         sleep(1);
     }
-
-    NSLog(@"viewDidAppear = %@", [BSNetworkTraffic sharedInstance].appStartTime);
 
     [self.navigationController pushViewController:[UIViewController new] animated:YES];
 }

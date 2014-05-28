@@ -20,7 +20,6 @@ struct BSNetworkTrafficValues
 
 @property(nonatomic, assign, readonly) struct   BSNetworkTrafficValues  *changes;
 @property(nonatomic, assign, readonly) struct   BSNetworkTrafficValues  *counters;
-@property(nonatomic, strong, readonly)          NSDate                  *appStartTime;
 
 + (instancetype)sharedInstance;
 
