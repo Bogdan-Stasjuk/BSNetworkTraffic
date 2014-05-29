@@ -38,9 +38,7 @@ Installation
 ============
 
 __Cocoapods__: `pod 'BSNetworkTraffic'`<br />
-__Manual__: Copy the __BSNetworkTraffic__ folder in your project<br />
-
-Import header in your project:
+__Manual__: Copy the __BSNetworkTraffic__ folder in your project and import header:
 
     #import "BSNetworkTraffic.h"
 
