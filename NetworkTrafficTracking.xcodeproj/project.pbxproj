@@ -127,12 +127,7 @@
 			children = (
 				4BB796E118F1A47D00E5421B /* Application */,
 				4BB796E718F1A47D00E5421B /* Controllers */,
-				4BB796E818F1A47D00E5421B /* Helpers */,
-				4BB796E918F1A47D00E5421B /* Library */,
-				4BB796EA18F1A47D00E5421B /* Models */,
 				4BB796EB18F1A47D00E5421B /* Resources */,
-				4BB796F818F1A47D00E5421B /* Vendors */,
-				4BB796F918F1A47D00E5421B /* Views */,
 			);
 			path = NetworkTrafficTracking;
 			sourceTree = "<group>";
@@ -176,34 +171,11 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		4BB796E818F1A47D00E5421B /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
-		4BB796E918F1A47D00E5421B /* Library */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Library;
-			sourceTree = "<group>";
-		};
-		4BB796EA18F1A47D00E5421B /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		4BB796EB18F1A47D00E5421B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				4BB796EC18F1A47D00E5421B /* Assets */,
-				4BB796F318F1A47D00E5421B /* Data */,
 				4BB796F418F1A47D00E5421B /* Localizations */,
-				4BB796F718F1A47D00E5421B /* NIBs */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -212,8 +184,6 @@
 			isa = PBXGroup;
 			children = (
 				4BB796ED18F1A47D00E5421B /* Images */,
-				4BB796F118F1A47D00E5421B /* Sound */,
-				4BB796F218F1A47D00E5421B /* Video */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -222,7 +192,6 @@
 			isa = PBXGroup;
 			children = (
 				4BB796EE18F1A47D00E5421B /* Default */,
-				4BB796F018F1A47D00E5421B /* Icon */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -235,77 +204,12 @@
 			path = Default;
 			sourceTree = "<group>";
 		};
-		4BB796F018F1A47D00E5421B /* Icon */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Icon;
-			sourceTree = "<group>";
-		};
-		4BB796F118F1A47D00E5421B /* Sound */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Sound;
-			sourceTree = "<group>";
-		};
-		4BB796F218F1A47D00E5421B /* Video */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Video;
-			sourceTree = "<group>";
-		};
-		4BB796F318F1A47D00E5421B /* Data */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
 		4BB796F418F1A47D00E5421B /* Localizations */ = {
 			isa = PBXGroup;
 			children = (
 				4BB796F518F1A47D00E5421B /* InfoPlist.strings */,
 			);
 			path = Localizations;
-			sourceTree = "<group>";
-		};
-		4BB796F718F1A47D00E5421B /* NIBs */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = NIBs;
-			sourceTree = "<group>";
-		};
-		4BB796F818F1A47D00E5421B /* Vendors */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Vendors;
-			sourceTree = "<group>";
-		};
-		4BB796F918F1A47D00E5421B /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				4BB796FA18F1A47D00E5421B /* TableCells */,
-				4BB796FB18F1A47D00E5421B /* TableViews */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		4BB796FA18F1A47D00E5421B /* TableCells */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TableCells;
-			sourceTree = "<group>";
-		};
-		4BB796FB18F1A47D00E5421B /* TableViews */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TableViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
