@@ -6,8 +6,7 @@ A singleton for calculating app's network traffic and system network traffic's c
 Traffic values are stored in BSNetworkTrafficValues structure:
 
 ```objc
-struct BSNetworkTrafficValues
-{
+struct BSNetworkTrafficValues {
     NSUInteger WiFiSent;
     NSUInteger WiFiReceived;
     NSUInteger WWANSent;
@@ -31,7 +30,7 @@ Clone project and run it. You can find examples of usage at `NTTTrackingTrafficV
 Compatibility
 =============
 
-This class has been tested back to iOS 6.0.
+This class has been tested back to iOS 7.0.
 
 
 Installation
