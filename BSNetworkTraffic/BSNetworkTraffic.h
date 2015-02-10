@@ -23,6 +23,7 @@ struct BSNetworkTrafficValues
 
 + (instancetype)sharedInstance;
 
+- (void)calcChanges;
 - (void)resetChanges;
 
 @end
