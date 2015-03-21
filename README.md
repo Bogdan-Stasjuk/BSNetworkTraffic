@@ -1,6 +1,8 @@
 BSNetworkTraffic
 ================
 
+[![Join the chat at https://gitter.im/Bogdan-Stasjuk/BSNetworkTraffic](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Bogdan-Stasjuk/BSNetworkTraffic?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 A singleton for calculating app's network traffic and system network traffic's changes between calls of method `resetChanges`. Thus you can get approximate values of app's sent/recieved data in bytes.
 
 Traffic values are stored in BSNetworkTrafficValues structure:
