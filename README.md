@@ -36,7 +36,7 @@ This class has been tested back to iOS 7.0.
 Installation
 ============
 
-__Cocoapods__: `pod 'BSNetworkTraffic'`<br />
+__CocoaPods__: `pod 'BSNetworkTraffic'`<br />
 __Manual__: Copy the __BSNetworkTraffic__ folder in your project and import header:
 
     #import "BSNetworkTraffic.h"
